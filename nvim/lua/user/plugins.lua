@@ -57,6 +57,7 @@ return packer.startup(function()
     use "nvim-lua/plenary.nvim"                 -- useful lua functions used by many plugins
 
     use "navarasu/onedark.nvim"                 -- colorscheme
+    use 'Mofiqul/vscode.nvim'
     use {
         "nvim-treesitter/nvim-treesitter",       -- better syntax highlighting
         run = ":TSUpdate",
@@ -76,7 +77,8 @@ return packer.startup(function()
             "kyazdani42/nvim-web-devicons",
         }
     }
-    use "rstacruz/vim-closer"                   -- closes brackets
+
+    use "jiangmiao/auto-pairs"                  -- auto pairs
 
     -- automatically set up config after cloning packer.nvim
     if PACKER_BOOTSTRAP then

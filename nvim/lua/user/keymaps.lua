@@ -27,3 +27,4 @@ set("n", "ff", telescope.find_files, opts)
 -- nvim tree
 set("n", "<C-n>", ":NvimTreeToggle<CR>", opts)
 
+
