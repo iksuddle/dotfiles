@@ -28,21 +28,21 @@ for k, v in pairs(options) do
 end
 
 -- colorscheme
---[[
+---[[
 require"onedark".setup {
     style = "darker"
 }
 require"onedark".load()
 --]]
 
-g.vscode_style = "dark"
-g.vscode_italic_comment = 1
-vim.cmd [[ colorscheme vscode ]]
+-- g.vscode_style = "dark"
+-- g.vscode_italic_comment = 1
+-- vim.cmd [[ colorscheme vscode ]]
 
 -- lualine (status line)
 require"lualine".setup {
     options = {
-        theme = "vscode",
+        theme = "onedark",
     }
 }
 
