@@ -41,7 +41,6 @@ packer.init {
 return packer.startup(function()
     use "wbthomason/packer.nvim"                -- packer can manage itself
 
-    use "neovim/nvim-lspconfig"                 -- Collection of configurations for the built-in LSP client
     use {
         'neovim/nvim-lspconfig',
         'williamboman/nvim-lsp-installer',
@@ -58,6 +57,7 @@ return packer.startup(function()
 
     use "navarasu/onedark.nvim"                 -- colorscheme
     use 'Mofiqul/vscode.nvim'
+    use 'tanvirtin/monokai.nvim'
     use {
         "nvim-treesitter/nvim-treesitter",       -- better syntax highlighting
         run = ":TSUpdate",
