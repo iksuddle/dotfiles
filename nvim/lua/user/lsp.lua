@@ -16,14 +16,22 @@ local custom_on_attach = function(_, bufnr)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>h", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
 end
 
-local lsp_installer = require"nvim-lsp-installer"
-lsp_installer.on_server_ready(function(server)
-    local opts = {
+require"nvim-lsp-installer".setup {}
+
+local lspconfig = require"lspconfig"
+
+local servers = {
+    "sumneko_lua",
+    "pyright",
+    "clangd",
+}
+
+for _, v in pairs(servers) do
+    lspconfig[v].setup {
         on_attach = custom_on_attach,
         capabilities = capabilities,
     }
-    server:setup(opts)
-end)
+end
 
 local luasnip = require"luasnip"
 
