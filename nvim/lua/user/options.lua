@@ -27,14 +27,9 @@ for k, v in pairs(options) do
     vim.opt[k] = v
 end
 
--- colorscheme
---[[
-require"onedark".setup {
-    style = "darker"
-}
-require"onedark".load()
---]]
+-- COLORSCHEME
 
+-- VSCODE THEME
 g.vscode_style = "dark"
 g.vscode_italic_comment = 1
 vim.cmd [[ colorscheme vscode ]]
@@ -42,12 +37,21 @@ vim.cmd [[ colorscheme vscode ]]
 -- lualine (status line)
 require"lualine".setup {
     options = {
-        theme = "vscode",
+        theme = "vscode"
     }
 }
 
 -- file explorer
-require"nvim-tree".setup()
+require"nvim-tree".setup {
+    renderer = {
+        indent_markers = {
+            enable = true
+        }
+    },
+    git = {
+        ignore = false
+    }
+}
 
 vim.cmd [[ set laststatus=3 ]]      -- global status line
 

@@ -55,9 +55,8 @@ return packer.startup(function()
     use "nvim-lua/popup.nvim"                   -- popup
     use "nvim-lua/plenary.nvim"                 -- useful lua functions used by many plugins
 
-    use "navarasu/onedark.nvim"                 -- colorscheme
     use 'Mofiqul/vscode.nvim'
-    use 'tanvirtin/monokai.nvim'
+
     use {
         "nvim-treesitter/nvim-treesitter",       -- better syntax highlighting
         run = ":TSUpdate",
@@ -71,12 +70,7 @@ return packer.startup(function()
         "nvim-telescope/telescope.nvim",        -- fuzzy finder
         requires = { {"nvim-lua/plenary.nvim"} }
     }
-    use {
-        "kyazdani42/nvim-tree.lua",             -- file explorer
-        requires = {
-            "kyazdani42/nvim-web-devicons",
-        }
-    }
+    use { "kyazdani42/nvim-tree.lua",  }        -- file explorer
 
     use "jiangmiao/auto-pairs"                  -- auto pairs
 

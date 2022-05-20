@@ -22,8 +22,9 @@ local lspconfig = require"lspconfig"
 
 local servers = {
     "sumneko_lua",
-    "pyright",
+    "pylsp",
     "clangd",
+    "gopls",
 }
 
 for _, v in pairs(servers) do
