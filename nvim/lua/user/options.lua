@@ -57,8 +57,9 @@ vim.cmd [[ set laststatus=3 ]]      -- global status line
 
 -- tree sitter
 require"nvim-treesitter.configs".setup {
-    ensure_installled = { "c", "python", "lua" },
+    ensure_installled = { "c", "python", "lua", "go" },
     highlight = {
         enable = true,
     }
 }
+

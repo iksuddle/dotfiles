@@ -16,7 +16,7 @@ local custom_on_attach = function(_, bufnr)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>h", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
 end
 
-require"nvim-lsp-installer".setup {}
+require"nvim-lsp-installer".setup()
 
 local lspconfig = require"lspconfig"
 
