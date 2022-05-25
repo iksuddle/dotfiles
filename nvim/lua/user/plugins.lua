@@ -55,7 +55,7 @@ return packer.startup(function()
     use "nvim-lua/popup.nvim"                   -- popup
     use "nvim-lua/plenary.nvim"                 -- useful lua functions used by many plugins
 
-    use 'Mofiqul/vscode.nvim'                   -- color theme
+    use 'navarasu/onedark.nvim'
 
     use {
         "nvim-treesitter/nvim-treesitter",       -- better syntax highlighting

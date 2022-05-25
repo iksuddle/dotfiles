@@ -6,7 +6,7 @@ local options = {
     clipboard = "unnamedplus",
     tabstop = 4,
     shiftwidth = 4,
-    scrolloff = 4,
+    scrolloff = 8,
     smarttab = true,
     smartindent = true,
     expandtab = true,
@@ -23,21 +23,30 @@ local options = {
     cursorline = true,
 }
 
+vim.cmd [[ set formatoptions-=cro ]]
+
 for k, v in pairs(options) do
     vim.opt[k] = v
 end
 
 -- COLORSCHEME
 
--- VSCODE THEME
-g.vscode_style = "dark"
-g.vscode_italic_comment = 1
-vim.cmd [[ colorscheme vscode ]]
+-- vscode theme
+-- g.vscode_style = "dark"
+-- g.vscode_italic_comment = 1
+-- vim.cmd [[ colorscheme vscode ]]
+
+require"onedark".setup {
+    style = "warmer",
+    ending_tildes = true
+}
+require"onedark".load()
+
 
 -- lualine (status line)
 require"lualine".setup {
     options = {
-        theme = "vscode"
+        theme = "auto"
     }
 }
 
