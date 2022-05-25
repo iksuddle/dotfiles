@@ -38,10 +38,9 @@ end
 
 require"onedark".setup {
     style = "warmer",
-    ending_tildes = true
+    ending_tildes = true,
 }
 require"onedark".load()
-
 
 -- lualine (status line)
 require"lualine".setup {
