@@ -7,7 +7,7 @@ local options = {
     tabstop = 4,
     shiftwidth = 4,
     expandtab = true,
-    scrolloff = 8,
+    scrolloff = 4,
     smarttab = true,
     smartindent = true,
     autoindent = true,
@@ -48,7 +48,6 @@ require"nvim-tree".setup {
     },
     git = { ignore = false }
 }
-
 
 -- tree sitter
 require"nvim-treesitter.configs".setup {
