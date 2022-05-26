@@ -10,8 +10,8 @@ if fn.empty(fn.glob(install_path)) > 0 then
         "https://github.com/wbthomason/packer.nvim",
         install_path,
     }
-    print "Installing packer, restart neovim..."
-    vim.cmd [[packadd packer.nvim]]
+    print"Installing packer, restart neovim..."
+    vim.cmd [[ packadd packer.nvim ]]
 end
 
 -- autocommand that reloads neovim whenever you save plugins.lua file
@@ -66,10 +66,7 @@ return packer.startup(function()
         "nvim-lualine/lualine.nvim",            -- status line
         requires = { "kyazdani42/nvim-web-devicons", opt = true }
     }
-    use {
-        "nvim-telescope/telescope.nvim",        -- fuzzy finder
-        requires = { {"nvim-lua/plenary.nvim"} }
-    }
+    use { "nvim-telescope/telescope.nvim" }     -- fuzzy finder
     use { "kyazdani42/nvim-tree.lua",  }        -- file explorer
 
     use "jiangmiao/auto-pairs"                  -- auto pairs
