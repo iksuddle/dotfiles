@@ -57,4 +57,3 @@ require"nvim-treesitter.configs".setup {
 
 vim.cmd"set laststatus=3"              -- global status line
 vim.cmd"set formatoptions-=cro"
-
