@@ -39,37 +39,31 @@ packer.init {
 
 -- install your plugins here
 return packer.startup(function()
-    use "wbthomason/packer.nvim"                -- packer can manage itself
+    use "wbthomason/packer.nvim"
 
-    use {
-        'neovim/nvim-lspconfig',
-        'williamboman/nvim-lsp-installer',
-    }
+    -- lsp
+    use "neovim/nvim-lspconfig"
+    use "williamboman/nvim-lsp-installer"
+
+    use "nvim-lua/plenary.nvim"
 
     -- autocomplete
-    use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
-    use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
-    use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
-    use 'L3MON4D3/LuaSnip' -- Snippets plugin
+    use "hrsh7th/nvim-cmp"
+    use "hrsh7th/cmp-nvim-lsp"
+    use "saadparwaiz1/cmp_luasnip"
+    use "L3MON4D3/LuaSnip"
 
-    use "nvim-lua/popup.nvim"                   -- popup
-    use "nvim-lua/plenary.nvim"                 -- useful lua functions used by many plugins
+    -- colorscheme
+    use "navarasu/onedark.nvim"
 
-    use 'navarasu/onedark.nvim'
+    use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
 
-    use {
-        "nvim-treesitter/nvim-treesitter",       -- better syntax highlighting
-        run = ":TSUpdate",
-    }
+    use { "kyazdani42/nvim-web-devicons", opt = true }
+    use "nvim-lualine/lualine.nvim"
+    use "nvim-telescope/telescope.nvim"
+    use "kyazdani42/nvim-tree.lua"
 
-    use {
-        "nvim-lualine/lualine.nvim",            -- status line
-        requires = { "kyazdani42/nvim-web-devicons", opt = true }
-    }
-    use { "nvim-telescope/telescope.nvim" }     -- fuzzy finder
-    use { "kyazdani42/nvim-tree.lua",  }        -- file explorer
-
-    use "jiangmiao/auto-pairs"                  -- auto pairs
+    use "jiangmiao/auto-pairs"
 
     -- automatically set up config after cloning packer.nvim
     if PACKER_BOOTSTRAP then
@@ -77,4 +71,3 @@ return packer.startup(function()
     end
 
 end)
-
