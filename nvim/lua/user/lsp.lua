@@ -19,16 +19,16 @@ end
 local luasnip = require"luasnip"
 
 local cmp = require"cmp"
-cmp.setup({
+cmp.setup{
     snippet = {
         expand = function(args)
             luasnip.lsp_expand(args.body)
         end
     },
-    mapping = cmp.mapping.preset.insert({
+    mapping = cmp.mapping.preset.insert {
         ["<C-d>"] = cmp.mapping.scroll_docs(-2),
         ["<C-f>"] = cmp.mapping.scroll_docs(2),
-        ["<C-Space>"] = cmp.mapping.complete(),
+        ["<C-Space>"] = cmp.mapping.complete({}),
         ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
@@ -47,29 +47,49 @@ cmp.setup({
                 fallback()
             end
         end, { "i", "s" }),
-    }),
-    sources = cmp.config.sources({
+    },
+    sources = cmp.config.sources {
         { name = 'nvim_lsp' },
         { name = 'luasnip' }
     }, {
         { name = 'buffer' }
-    })
-})
-
-require"nvim-lsp-installer".setup()
-
-local lspconfig = require"lspconfig"
-
-local servers = {
-    "sumneko_lua",
-    "pylsp",
-    "clangd",
-    "gopls",
+    }
 }
 
-for _, v in pairs(servers) do
-    lspconfig[v].setup {
-        on_attach = on_attach,
-        capabilities = capabilities,
+require"nvim-lsp-installer".setup{}
+local lspconfig = require"lspconfig"
+
+-- lua
+lspconfig.sumneko_lua.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+    settings = {
+        Lua = {
+            runtime = {
+                version = 'LuaJIT',
+            },
+            diagnostics = {
+                globals = { 'vim' },
+            },
+            workspace = {
+                library = vim.api.nvim_get_runtime_file("", true),
+            },
+            telemetry = {
+                enable = false
+            }
+        }
     }
-end
+}
+
+
+-- pylsp
+lspconfig.pylsp.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+}
+
+-- clangd
+lspconfig.clangd.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+}
