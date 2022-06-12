@@ -41,6 +41,8 @@ return require("packer").startup(function()
     use "kyazdani42/nvim-tree.lua"
     -- fuzzy finder
     use "nvim-telescope/telescope.nvim"
+    -- auto pairs
+    use "jiangmiao/auto-pairs"
 
     if packer_bootstrap then
         require("packer").sync()

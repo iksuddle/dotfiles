@@ -1,4 +1,4 @@
-options = {
+local options = {
 	number = true,
 	relativenumber = true,
 	clipboard = "unnamedplus",
@@ -40,7 +40,7 @@ onedark.load()
 require"lualine".setup {
     options = {
         theme = "onedark",
-        section_separators = '', 
+        section_separators = '',
         component_separators = '',
         globalstatus = true,
     }
