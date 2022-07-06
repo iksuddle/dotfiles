@@ -53,3 +53,5 @@ require"nvim-tree".setup {
     },
     git = { ignore = false }
 }
+
+vim.cmd ":set formatoptions-=cro"

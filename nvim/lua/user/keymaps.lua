@@ -24,7 +24,8 @@ set("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 set("n", "<C-n>", ":NvimTreeToggle<CR>", opts)
 
 -- telescope (fuzzy finder
-telescope = require"telescope.builtin"
+local telescope = require"telescope.builtin"
 set("n", "ff", telescope.find_files)
 set("n", "fb", telescope.buffers)
 set("n", "fh", telescope.help_tags)
+

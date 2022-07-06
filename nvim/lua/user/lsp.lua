@@ -82,7 +82,6 @@ lspconfig.sumneko_lua.setup {
     }
 }
 
-
 -- pylsp
 lspconfig.pylsp.setup {
     on_attach = on_attach,
@@ -95,8 +94,8 @@ lspconfig.clangd.setup {
     capabilities = capabilities,
 }
 
--- omnisharp
-lspconfig.omnisharp.setup {
+-- gopls
+lspconfig.gopls.setup {
     on_attach = on_attach,
     capabilities = capabilities,
 }
