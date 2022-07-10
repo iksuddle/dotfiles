@@ -10,6 +10,7 @@ end
 return require("packer").startup(function()
     -- packer
     use "wbthomason/packer.nvim"
+
     -- lsp config and lsp installer
     use {
         "williamboman/nvim-lsp-installer",
@@ -20,27 +21,42 @@ return require("packer").startup(function()
             end
         }
     }
+
     -- completion
     use "hrsh7th/nvim-cmp"
     use "hrsh7th/cmp-nvim-lsp"
+
     -- snippets
     use "saadparwaiz1/cmp_luasnip"
     use "L3MON4D3/LuaSnip"
+
     -- lua functions used by some plugins
     use "nvim-lua/plenary.nvim"
+
     -- treesitter
     use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
+
+    -- tab bar
+    use {
+        'romgrk/barbar.nvim',
+        requires = {'kyazdani42/nvim-web-devicons'}
+    }
+
     -- colorscheme
     use "navarasu/onedark.nvim"
+
     -- status line
     use {
       "nvim-lualine/lualine.nvim",
       requires = { "kyazdani42/nvim-web-devicons", opt = true }
     }
+
     -- file explorer
     use "kyazdani42/nvim-tree.lua"
+
     -- fuzzy finder
     use "nvim-telescope/telescope.nvim"
+
     -- auto pairs
     use "jiangmiao/auto-pairs"
 

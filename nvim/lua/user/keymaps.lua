@@ -29,3 +29,13 @@ set("n", "ff", telescope.find_files)
 set("n", "fb", telescope.buffers)
 set("n", "fh", telescope.help_tags)
 
+-- tab bar
+set("n", "<leader>.", "<Cmd>BufferNext<CR>", opts)
+set("n", "<leader>,", "<Cmd>BufferPrevious<CR>", opts)
+
+set("n", "<leader>x", "<Cmd>BufferClose<CR>", opts)
+
+set('n', '<leader>1', '<Cmd>BufferGoto 1<CR>', opts)
+set('n', '<leader>2', '<Cmd>BufferGoto 2<CR>', opts)
+set('n', '<leader>3', '<Cmd>BufferGoto 3<CR>', opts)
+set('n', '<leader>4', '<Cmd>BufferGoto 4<CR>', opts)
