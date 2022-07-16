@@ -1,4 +1,4 @@
-require "user.options"
-require "user.plugins"
-require "user.lsp"
-require "user.keymaps"
+require "settings.options"
+require "settings.plugins"
+require "settings.keymaps"
+require "settings.lsp"
