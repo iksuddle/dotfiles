@@ -1,28 +1,21 @@
+# Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-path+=('usr/local/go/bin')
-path+=('~/.npm-global/bin')
+path+=("$HOME/.npm-global/bin")
 export PATH
 
-# theme
 ZSH_THEME="gallois"
 
-# plugins
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-# pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-
-# user configuration
+# User configuration
+alias nvimconfig="cd ~/.config/nvim && nvim ."
+alias kittyconf="cd ~/.config/kitty && nvim ."
 alias zshrc="nvim ~/.zshrc"
-alias nvimconfig="cd $HOME/.config/nvim"
-alias kittyconf="cd $HOME/.config/kitty && nvim ."
 
 function mcd() {
     mkdir $1 && cd $1
 }
-
