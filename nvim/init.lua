@@ -1,4 +1,5 @@
 require "settings.options"
-require "settings.plugins"
+require "settings.plug.plugins"
+require "settings.plug.options"
 require "settings.keymaps"
 require "settings.lsp"
